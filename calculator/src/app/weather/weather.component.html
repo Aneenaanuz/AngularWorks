@@ -1,0 +1,47 @@
+
+<div class="container">
+    <div class="row m-5">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h3 class="text-center">Weather Application</h3>
+            <form action="" class="p-5 shadow" [formGroup]="weatherForm" (ngSubmit)="findWeather()">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="enter place name" formControlName="place">
+                    <div class="text-danger" *ngIf="place?.touched && place?.invalid">Enter valid place name</div>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="find" class="form-control btn btn-info" [disabled]="weatherForm.invalid">
+                </div>
+            </form>
+    
+    
+        </div>
+        <div class="col-2"></div>
+    </div>
+    
+    
+    
+    </div>
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+            <div class="{{spinner_class}}" role="status" >
+                <span class="visually-hidden"></span>
+              </div>
+
+            <div class="card" style="width: 18rem;" *ngIf="weather_data">
+                
+            <div class="card-header">
+                {{weather_data.name}}
+            </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{weather_data.main.temp}}</li>
+                  <li class="list-group-item">{{weather_data.main.humidity}}</li>
+                  
+                </ul>
+              </div>
+        </div>
+        <div class="col-4"></div>
+    </div>

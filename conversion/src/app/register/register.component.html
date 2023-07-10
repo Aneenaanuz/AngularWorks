@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-3">
+            
+        </div>
+        <div class="col-6 p-5 shadow">
+           <form action="" [formGroup]="regForm" (ngSubmit)="createAccount()">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="enter username" formControlName="username" >
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="enter email" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="enter password" formControlName="password">
+            </div>
+            <div class="mb-3">
+                <input type="submit" class="form-control btn btn-info" value="register">
+            </div>
+           </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    
+    </div>
+
+
